@@ -21,7 +21,7 @@ http://hellok8s.japps.cloud
 - The Domain / FQDN may be configured in the file kubernetes/argocd/ingress.yaml
 - It is possible to set the KUBECONFIG variable before running the commands, rather than prefixing it.
 - This is a demo app and therefore uses HTTP only.
-  ArgoCD is deployed in non high availability mode.
+  ArgoCD is deployed in non high availability mode to reduce deployment time and simplify the setup.
 
 ```
 export KUBECONFIG=~/.kube/azurek8s
@@ -44,7 +44,7 @@ git clone https://github.com/eranoc1/aks-tf-argocd.git
 cd ~/gh/aks-tf-argocd/terraform
 terraform init -upgrade
 terraform plan -out "tfplan"
-terraform apply "tfplan" # Manual approval. This may take a few minutes.
+terraform apply "tfplan" # Manual approval. This may take a few minutes
 echo "$(terraform output kube_config | grep -Ev 'EOT|<< EOT')" > ~/.kube/azurek8s # Save the AKS kubeconfig file
 KUBECONFIG=~/.kube/azurek8s kubectl create namespace argocd
 KUBECONFIG=~/.kube/azurek8s kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
@@ -65,5 +65,5 @@ Open the app URL in your browser.
 ## Clean up resources
 ```
 terraform plan -destroy -out "tfplan"
-terraform apply -destroy  "tfplan" # Manual approval.
+terraform apply -destroy  "tfplan" # Manual approval
 ```
