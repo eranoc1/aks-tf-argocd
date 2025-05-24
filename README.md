@@ -54,7 +54,7 @@ KUBECONFIG=~/.kube/azurek8s kubectl apply -f ns.yaml
 KUBECONFIG=~/.kube/azurek8s kubectl apply -f app.yaml
 curl https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/cloud/deploy.yaml |\
 sed 's/namespace: ingress-nginx/namespace: hello-kubernetes/g' | KUBECONFIG=~/.kube/azurek8s kubectl apply -f -
-KUBECONFIG=~/.kube/azurek8s kubectl apply -f ingress.yaml
+KUBECONFIG=~/.kube/azurek8s kubectl apply -f ingress.yaml # It might take a short time before it starts working
 KUBECONFIG=~/.kube/azurek8s kubectl get svc -n hello-kubernetes | grep -E "NAME|ingress-nginx-controller "  # Get the ingress public IP to be used in the DNS record
 grep "host:" ingress.yaml | cut -d : -f 2 | awk '{print $1}' # Get the FQDN for the DNS record
 curl http://hellok8s.japps.cloud # Use the relevant FQDN
