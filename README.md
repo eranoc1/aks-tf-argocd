@@ -11,7 +11,7 @@
   - [Clean up resources](#clean-up-resources)
 
 ## Sample app screenshot
-https://github.com/eranoc1/eranoc1.github.io/blob/main/ghscreenshots/aks-tf-argocd-app1.png
+[Screenshot](https://github.com/eranoc1/eranoc1.github.io/blob/main/ghscreenshots/aks-tf-argocd-app1.png)
 ## Sample app URL
 http://hellok8s.japps.cloud
 
