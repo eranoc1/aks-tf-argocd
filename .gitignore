@@ -37,5 +37,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore macOS system files
+# Ignore macOS hidden Finder files
 .DS_Store
