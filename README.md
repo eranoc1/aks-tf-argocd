@@ -65,5 +65,5 @@ Open the app URL in your browser.
 ## Clean up resources
 ```
 terraform plan -destroy -out "tfplan"
-terraform apply -destroy  "tfplan" # Manual approval
+terraform apply -destroy "tfplan"
 ```
